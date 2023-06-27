@@ -1,20 +1,24 @@
+import colorama
+from colorama import Fore, Style
+
 def generate_banner():
-    banner = r"""
-\033[91m  ____  _   _    _    _   _ ____  ___    _    ____   
+    colorama.init()
+    banner = f"""
+{Fore.RED}  ____  _   _    _    _   _ ____  ___    _    ____   
  / ___|| | | |  / \  | | | |  _ \|_ _|  / \  |  _ \  
  \___ \| |_| | / _ \ | |_| | |_) || |  / _ \ | |_) | 
   ___) |  _  |/ ___ \|  _  |  _ < | | / ___ \|  _ <  
  |____/|_| |_/_/   \_\_| |_|_| \_\___/_/   \_\_| \_\ 
                                                      
-\033[0m"""
+{Style.RESET_ALL}"""
     print(banner)
 
 def menu():
     print("Welcome to Your Termux Tool!")
-    print("\033[92m1. Option 1\033[0m")
-    print("\033[92m2. Option 2\033[0m")
-    print("\033[92m3. Option 3\033[0m")
-    print("\033[92m4. Exit\033[0m")
+    print(f"{Fore.GREEN}1. Option 1{Style.RESET_ALL}")
+    print(f"{Fore.GREEN}2. Option 2{Style.RESET_ALL}")
+    print(f"{Fore.GREEN}3. Option 3{Style.RESET_ALL}")
+    print(f"{Fore.GREEN}4. Exit{Style.RESET_ALL}")
 
     choice = input("Enter your choice (1-4): ")
 
