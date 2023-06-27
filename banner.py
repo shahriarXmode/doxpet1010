@@ -1,5 +1,13 @@
+import os
 import colorama
 from colorama import Fore, Style
+
+def clear_terminal():
+    # Clear terminal screen
+    if os.name == 'nt':
+        os.system('cls')
+    else:
+        os.system('clear')
 
 def generate_banner():
     colorama.init()
@@ -37,6 +45,9 @@ def menu():
     else:
         print("Invalid choice. Please try again.")
         menu()
+
+# Clear the terminal
+clear_terminal()
 
 # Call the function to generate the banner
 generate_banner()
